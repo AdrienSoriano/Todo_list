@@ -17,12 +17,30 @@
     <title>Todo list</title>
 </head>
 <body>
-
-<header>
-    <h1>À Faire</h1>
-</header>
 <main>
-
+    <header>
+        <h1>À Faire</h1>
+    </header>
+    <section>
+        <div>
+            <input type="radio">
+            <input type="text" placeholder="Ajoutez une tâche">
+        </div>
+        <ol>
+            <li><input type="radio"> Finir le portfolio</li>
+            <li><input type="radio"> Faire des biscuits</li>
+            <li><input type="radio"> Trouver un stage</li>
+            <li><input type="radio"> Lire la doc php</li>
+            <li><input type="radio"> Créer un README</li>
+            <li><input type="radio"> Arriver à l'heure (Loïc)</li>
+        </ol>
+        <p>5 tâches restantes</p>
+        <div>
+            <button>Toutes</button>
+            <button>En cours</button>
+            <button>Finies</button>
+        </div>
+    </section>
 </main>
 <footer>
     <p>2022 - Made with <i class="fa-solid fa-heart"></i></p>
