@@ -31,7 +31,7 @@ h1{
     position: absolute;
     top: 70px;
 }
-section{
+section:nth-of-type(1){
     position: absolute;
     top: 130px;
     width: 100%;
@@ -45,7 +45,7 @@ div:nth-of-type(1){
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 40px;
+    height: 50px;
     box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
     border-radius: 5px;
 }
@@ -54,8 +54,72 @@ div:nth-of-type(1) input:nth-last-of-type(1){
     outline: none;
     border: none;
 }
+ol{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+li{
+    background-color: #fff;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    height: 60px;
+    align-items: center;
+    color: #494C6B;
+    font-size: 1rem;
+    border-bottom: solid 2px #E3E4F1;
+}
+li input{
+    margin-left: 16px;
+}
+li p{
+    margin-left: 30px;
+}
+section:nth-of-type(2){
+    position: absolute;
+    top: 573px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section:nth-of-type(2) div:nth-of-type(1){
+    display: flex;
+    justify-content: start;
+    height: 60px;
+}
+section:nth-of-type(2) div p{
+    color: #9495A5;
+    font-size: 1rem;
+    margin-left: 16px;
+}
+section:nth-of-type(2) div:nth-child(2){
+    background-color: #fff;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    height: 50px;
+}
+section:nth-of-type(2) div:nth-child(2) button{
+    padding: 5px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #9495A5;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 footer{
-    margin-top: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 130%;
+    font-size: 1.1rem;
+    color: #9495A5;
 }
 
 @media screen and (min-width: 1200px) {

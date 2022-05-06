@@ -27,14 +27,18 @@
             <input type="text" placeholder="Ajoutez une tâche">
         </div>
         <ol>
-            <li><input type="radio"> Finir le portfolio</li>
-            <li><input type="radio"> Faire des biscuits</li>
-            <li><input type="radio"> Trouver un stage</li>
-            <li><input type="radio"> Lire la doc php</li>
-            <li><input type="radio"> Créer un README</li>
-            <li><input type="radio"> Arriver à l'heure (Loïc)</li>
+            <li><input type="radio"><p>Finir le portfolio</p></li>
+            <li><input type="radio"><p>Faire des biscuits</p></li>
+            <li><input type="radio"><p>Trouver un stage</p></li>
+            <li><input type="radio"><p>Lire la doc php</p></li>
+            <li><input type="radio"><p>Créer un README</p></li>
+            <li><input type="radio"><p>Arriver à l'heure (Loïc)</p></li>
         </ol>
-        <p>5 tâches restantes</p>
+    </section>
+    <section>
+        <div>
+            <p>5 tâches restantes</p>
+        </div>
         <div>
             <button>Toutes</button>
             <button>En cours</button>
