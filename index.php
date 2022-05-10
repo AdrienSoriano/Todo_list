@@ -23,16 +23,16 @@
     </header>
     <section>
         <div>
-            <input type="radio">
+            <span class="checklist"></span>
             <input type="text" placeholder="Ajoutez une tâche">
         </div>
         <ol>
-            <li><input type="radio"><p>Finir le portfolio</p></li>
-            <li><input type="radio"><p>Faire des biscuits</p></li>
-            <li><input type="radio"><p>Trouver un stage</p></li>
-            <li><input type="radio"><p>Lire la doc php</p></li>
-            <li><input type="radio"><p>Créer un README</p></li>
-            <li><input type="radio"><p>Arriver à l'heure (Loïc)</p></li>
+            <li><span class="checklist"></span><p>Finir le portfolio</p></li>
+            <li><span class="checklist"></span><p>Faire des biscuits</p></li>
+            <li><span class="checklist"></span><p>Trouver un stage</p></li>
+            <li><span class="checklist"></span><p>Lire la doc php</p></li>
+            <li><span class="checklist"></span><p>Créer un README</p></li>
+            <li><span class="checklist"></span><p>Arriver à l'heure (Loïc)</p></li>
         </ol>
     </section>
     <section>
