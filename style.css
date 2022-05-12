@@ -1,3 +1,4 @@
+/* suppression des margins et des paddings et ajout d'une police, font size déterminé à 16px. */
 *{
     margin: 0;
     padding: 0;
@@ -6,11 +7,13 @@
 html{
     font-size: 12px; 
 }
+/* détermine la taille du body et la couleur du background. */
 body{
     width: 100vw;
     height: 100vh;
     background-color:  #FFFAFF;
 }
+/* position relative sur le main pour faire passer la section dessus en absolute */
 main{
     position: relative;
 }
@@ -78,6 +81,14 @@ li input{
 }
 li p{
     margin-left: 30px;
+}
+.checklist{
+    width: 20px;
+    border: solid 0.5px grey;
+    border-radius: 50%;
+    height: 20px;
+    margin-left: 10px;
+    background: transparent;
 }
 section:nth-of-type(2){
     position: absolute;
