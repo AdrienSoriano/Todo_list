@@ -1,4 +1,19 @@
 <?php
+include 'logins/login.php';
+
+$showAll = "SELECT taches.nom, statut.nom_du_statut, statut.url_image FROM taches INNER JOIN statut ON taches.id_statut = statut.id;";
+$showFinished = "SELECT taches.nom, statut.nom_du_statut, statut.url_image FROM taches INNER JOIN statut ON taches.id_statut = statut.id WHERE taches.id_statut = 2;";
+$showUnfinished = "SELECT taches.nom, statut.nom_du_statut, statut.url_image FROM taches INNER JOIN statut ON taches.id_statut = statut.id WHERE taches.id_statut = 1";
+
+/* $all = $_POST['all'];
+$finished = $_POST['finished'];
+$unfinished = $_POST['unfinished'];
+$status = $_POST['statut']; */
+try{
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $stmt1 = $conn->query($showAll);
+    $stmt2 = $conn->query($showFinished);
+    $stmt3 = $conn->query($showUnfinished);
 ?>
 <!DOCTYPE html>
 <html lang="FR-fr">
@@ -8,6 +23,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Assets/Media/validation.png" type="image/x-icon">
     <!-- Font : Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +44,15 @@
             <input type="text" placeholder="Ajoutez une tâche">
         </div>
         <ol>
-            <li><span class="checklist"></span><p>Finir le portfolio</p></li>
-            <li><span class="checklist"></span><p>Faire des biscuits</p></li>
-            <li><span class="checklist"></span><p>Trouver un stage</p></li>
-            <li><span class="checklist"></span><p>Lire la doc php</p></li>
-            <li><span class="checklist"></span><p>Créer un README</p></li>
-            <li><span class="checklist"></span><p>Arriver à l'heure (Loïc)</p></li>
+            <?php while($row = $stmt1->fetch(PDO::FETCH_ASSOC)) : ?>
+            <li><img src="<?php echo htmlspecialchars($row['url_image']); ?>"><p><?php echo htmlspecialchars($row['nom']); ?></p></li>
+            <?php endwhile; ?>
+            <?php while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) : ?>
+            <li><img src="<?php echo htmlspecialchars($row['url_image']); ?>"><p><?php echo htmlspecialchars($row['nom']); ?></p></li>
+            <?php endwhile; ?>
+            <?php while($row = $stmt3->fetch(PDO::FETCH_ASSOC)) : ?>
+            <li><img src="<?php echo htmlspecialchars($row['url_image']); ?>"><p><?php echo htmlspecialchars($row['nom']); ?></p></li>
+            <?php endwhile; ?>
         </ol>
     </section>
     <section>
@@ -40,9 +60,9 @@
             <p>5 tâches restantes</p>
         </div>
         <div>
-            <button>Toutes</button>
-            <button>En cours</button>
-            <button>Finies</button>
+            <button name="all">Toutes</button>
+            <button name="unfinished">En cours</button>
+            <button name="finished">Finies</button>
         </div>
     </section>
 </main>
@@ -52,3 +72,15 @@
 <script src="app.js"></script>
 </body>
 </html>
+
+<?php
+
+if($stmt1 === false){
+  die("Erreur");
+ }
+ 
+}catch (PDOException $e){
+  die("Impossible de se connecter à la base de données $dbname :" . $e->getMessage());
+}
+
+?>

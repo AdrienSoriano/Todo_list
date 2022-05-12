@@ -65,6 +65,9 @@ ol{
     align-items: center;
     margin-top: 20px;
 }
+ol img{
+    margin-left: 20px;
+}
 li{
     background-color: #fff;
     width: 90%;
